@@ -87,6 +87,24 @@ template<class T> class Frustum {
         /** @brief Plane at given index */
         constexpr Vector4<T> operator[](std::size_t i) const { return _data[i]; }
 
+        /** @brief Left plane */
+        constexpr Vector4<T> left() const { return _data[0]; }
+
+        /** @brief Right plane */
+        constexpr Vector4<T> right() const { return _data[1]; }
+
+        /** @brief Bottom plane */
+        constexpr Vector4<T> bottom() const { return _data[2]; }
+
+        /** @brief Top plane */
+        constexpr Vector4<T> top() const { return _data[3]; }
+
+        /** @brief Near plane */
+        constexpr Vector4<T> near() const { return _data[4]; }
+
+        /** @brief Far plane */
+        constexpr Vector4<T> far() const { return _data[5]; }
+
         /** @brief Equality comparison */
         bool operator==(const Frustum<T>& other) const {
             for(std::size_t i = 0; i != 6; ++i)
