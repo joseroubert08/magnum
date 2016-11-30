@@ -76,6 +76,19 @@ template<class T> class Frustum {
         /** @brief Plane at given index */
         constexpr Vector4<T> operator[](std::size_t i) const { return _data[i]; }
 
+        /** @brief Equality comparison */
+        bool operator==(const Frustum<T>& other) const {
+            for(std::size_t i = 0; i != 6; ++i)
+                if(_data[i] != other._data[i]) return false;
+
+            return true;
+        }
+
+        /** @brief Non-equality comparison */
+        bool operator!=(const Frustum<T>& other) const {
+            return !operator==(other);
+        }
+
     private:
         Vector4<T> _data[6];
 };
