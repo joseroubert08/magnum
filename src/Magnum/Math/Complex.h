@@ -490,8 +490,8 @@ template<class T> Corrade::Utility::Debug& operator<<(Corrade::Utility::Debug& d
         << value.imaginary() << Corrade::Utility::Debug::nospace << ")";
 }
 
-/* Explicit instantiation for commonly used types */
 #ifndef DOXYGEN_GENERATING_OUTPUT
+/* Explicit instantiation for commonly used types */
 extern template MAGNUM_EXPORT Corrade::Utility::Debug& operator<<(Corrade::Utility::Debug&, const Complex<Float>&);
 extern template MAGNUM_EXPORT Corrade::Utility::Debug& operator<<(Corrade::Utility::Debug&, const Complex<Double>&);
 #endif
